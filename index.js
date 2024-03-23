@@ -9,9 +9,21 @@ app.get("/", (req,res)=>{
   res.send("main")
 })
 
-app.get('/user/:id', (req,res) => {
-  const {Id} = req.params;
-  res.send({"sound" : Id});
+app.get('/sound/:id', (req,res) => {
+  const {id} = req.params;
+  if(id == "dog")
+  {
+    res.send("멍멍");
+  }
+  else if(id == "cat")
+  {
+    res.send("야옹");
+  }
+
+  else
+  {
+    res.send("알 수 없음");
+  }
 })
 
 
